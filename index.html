@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>React Básico</title>
+    <style>
+        .red{
+            background-color: red;
+            color: white;
+            padding: 10px;
+        }
+
+        .green{
+            background-color: green;
+            color: white;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="root"></div>
+
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    
+    <script type="text/babel">
+        // function MeuComponente() { //Class components
+        //     return (
+        //         <div>
+        //         <h1>Olá React</h1>
+        //         <h1>test</h1>
+        //         </div>
+        //     )
+        // }
+
+        // class MeuComponente extends React.Component{ // class components
+        //     render(){
+        //         return ( 
+        //             <div>
+        //                 <p>Teste</p>
+        //             </div>
+        //             )
+        //     }
+        // }
+
+        // class CompA extends React.Component{
+        //     render(){
+        //         return(
+        //             <h3>CompA</h3>
+        //         );
+        //     }
+        // }
+
+        // class CompB extends React.Component{
+        //     render(){
+        //         return(
+        //             <h3>CompB</h3>
+        //         );
+        //     }
+        // }
+
+        // class MeuComponente extends React.Component{
+        //     render(){
+        //         return(
+        //             <div>
+        //                 <CompA />
+        //                 <hr />
+        //                 <CompB  />
+        //             </div>
+        //         );
+        //     }
+        // }
+
+        //Props
+        
+        // function CompA(props){
+        //     return(
+        //         <div>
+        //             <p>Olá {props.nome} {props.apelido}</p>
+        //         </div>
+        //     );
+        // }
+
+        // class CompB extends React.Component {
+        //     render(){
+        //         return(
+        //             <div>
+        //                 <p>Olá novamente, {this.props.nome} {this.props.apelido} </p>
+        //             </div>
+        //         );
+        //     }
+        // }
+
+        //Mais props 7
+
+        // function CompA(props){
+        //     return(
+        //         <div>
+        //             <p>Nome: {props.nome}</p>
+        //         </div>
+        //     );
+        // }
+        
+
+        // function App(){
+        //     return(
+        //         <div>
+        //             <CompA nome="Clipper" />
+        //             <CompA nome="Luciane" />
+        //             <CompA nome="Nyna" />
+        //             <CompA nome="Mary" />
+        //             <CompA nome="PAul" />                
+        //         </div>
+        //     );
+        // }
+
+
+        
+        // class Adicao extends React.Component{
+        //     render(){
+        //         const PI = 3.14;
+        //         return(
+        //             <div>
+        //                 <p>O RESULTADO {this.props.a} + {this.props.b} = {this.props.a + this.props.b} </p>
+        //                 <h1>{PI}</h1>
+        //             </div>
+        //         );
+        //     }
+        // }
+
+            // class CompA extends React.Component{
+            //     render(){
+            //         return(
+            //             <div className="red">
+            //                 <p>Texto componente A</p>
+            //             </div>
+            //         )
+            //     }
+            // }
+
+            // class CompB extends React.Component{
+            //     render(){
+            //         return(
+            //             <div >
+            //                 <p className="green">Texto componente B</p>
+            //             </div>
+            //         )
+            //     }
+            // }
+            
+            // class App extends React.Component{
+            //     render(){
+            //         return(
+            //             <div>
+            //                 <CompA />
+            //                 <CompB />
+            //             </div>
+            //         )
+            //     }
+            // }
+
+// Add reactdom render dentro do componente.
+        // function Tempo(){
+        //         <p>{new Date().toLocaleTimeString()}</p>
+        //         const conteudo = (
+        //             <div>
+        //                 <h3>Tempo atual</h3>
+        //                 <p>Data: {new Date().toLocaleDateString()}</p>
+        //                 <p>Hora: {new Date().toLocaleTimeString()}</p>
+        //             </div>
+        //         );
+        //         ReactDOM.render(
+        //         conteudo,
+        //         document.getElementById('root')
+        //     );
+        // }
+
+        // setInterval(Tempo, 1000);
+        
+// NLINE Styling
+            // ReactDOM.render(
+            //     <h1 style={{ color:"red", backgroundColor:"#BBB", padding: "160px 160px 120px 20px", marginLeft: "160px" }}>d</h1>,
+            //     document.getElementById('root')
+            // );
+
+//State
+            // class App extends React.Component{
+
+            //     constructor(){
+            //         super();
+            //         this.state = {
+            //             nome: "Silvio",
+            //             idade: 54
+            //         }
+            //     }
+
+
+            //     render(){       //state para atributos interno e
+            //         return(     //props para atributos externos
+            //             <div>
+            //                <p>Nome: {this.state.nome} {this.props.Apelido}</p>
+            //                <p>Idade: {this.state.idade}</p>
+            //             </div>
+            //         )
+            //     }
+            // }
+
+            // ReactDOM.render(
+            //     <App Apelido ="clipper"/>, 
+            //     document.getElementById('root')
+            // );
+
+// 12 - Diferença state e props 
+            // class App extends React.Component{
+            //     render(){
+            //         return(
+            //             <div>
+            //                 <p>Nome: </p>
+            //                 <p>Idade: </p>
+            //             </div>
+            //         )
+            //     }
+            // }
+// 13 - Passar valor entre pai e filhos
+
+// 14 - Eventos
+        
+        class App extends React.Component{
+            constructor(){
+                super()
+
+                this.state={
+                    nome: "Silvio"
+                }
+
+                this.cmd_click = this.cmd_click.bind(this);
+
+            }
+
+            cmd_click(){
+                this.setState({nome: "Clipper"})
+            }
+
+            render(){
+                return(
+                    <div>
+                        <p>Nome: {this.state.nome}</p>
+                        <button onClick={this.cmd_click.bind(this)}>Click</button>
+                    </div>
+                )
+            }
+        }
+
+        ReactDOM.render(
+            <App />,
+                document.getElementById('root')
+        )
+
+        // const root = document.getElementById('root');
+        // ReactDOM.render(<App />, root);
+    </script>
+    
+</body>
+</html>
